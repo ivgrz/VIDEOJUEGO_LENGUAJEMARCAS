@@ -1,0 +1,19 @@
+#map {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 20px auto;
+    background-color: #222;
+    border: 2px solid white;
+  }
+  
+  #character {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    top: 0;
+    left: 0;
+    transition: top 0.1s, left 0.1s;
+  }
+  
