@@ -1,7 +1,7 @@
 const character = document.getElementById("character");
 let posX = 0;
 let posY = 0;
-const step = 40; // tamaño del paso (igual al tamaño del personaje)
+const step = 40; 
 
 document.addEventListener("keydown", (e) => {
   switch (e.key) {

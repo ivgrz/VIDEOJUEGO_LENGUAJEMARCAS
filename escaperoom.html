@@ -6,24 +6,23 @@
     <title>PaginaPrincipal</title>
     <link rel="stylesheet" href="escaperoom.css">
 </head>
-<!-- Pantalla inicial -->
-<div class="startScreen">
-  <button id="startButton" class="startbutton">Comenzar Juego</button>
-</div>
+<body>
+  <!-- Pantalla inicial -->
+  <div id="startScreen" class="startScreen">
+      <button id="startButton" class="startbutton">Comenzar Juego</button>
+  </div>
 
-<!-- Juego principal -->
-<div id="gameScreen" style="display: none;">
-  <div class="personaje" id="character"></div>
-</div>
-
-<script src="escaperoom.js"></script>
-<script>
-  // Mostrar el juego y ocultar la pantalla inicial al hacer clic en "Comenzar Juego"
-  document.getElementById("startButton").addEventListener("click", () => {
-    document.getElementById("startScreen").style.display = "none";
-    document.getElementById("gameScreen").style.display = "block";
-  });
-</script>
+  <!-- Juego principal -->
+  <div id="gameScreen" style="display: none;">
+      <div class="personaje" id="character"></div>
+  </div>
+  <script>
+    document.getElementById("startButton").addEventListener("click", () => {
+      document.getElementById("startScreen").style.display = "none";
+      document.getElementById("gameScreen").style.display = "block";
+    });
+  </script>
+   <script src="escaperoom.js"></script>
 </body>
 </html>
 
