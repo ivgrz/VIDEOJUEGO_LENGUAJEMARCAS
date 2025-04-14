@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaginaPrincipal</title>
+    <link rel="stylesheet" href="escaperoom.css">
+</head>
+<!-- Pantalla inicial -->
+<div id="startScreen">
+  <button id="startButton" class="startbutton">Comenzar Juego</button>
+</div>
+
+<!-- Juego principal -->
+<div id="gameScreen" style="display: none;">
+  <div id="character"></div>
+</div>
+
+<script src="escaperoom.js"></script>
+<script>
+  // Mostrar el juego y ocultar la pantalla inicial al hacer clic en "Comenzar Juego"
+  document.getElementById("startButton").addEventListener("click", () => {
+    document.getElementById("startScreen").style.display = "none";
+    document.getElementById("gameScreen").style.display = "block";
+  });
+</script>
+</body>
+</html>
+
+  
