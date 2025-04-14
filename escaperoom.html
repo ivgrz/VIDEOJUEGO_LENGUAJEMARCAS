@@ -20,7 +20,16 @@
     document.getElementById("startButton").addEventListener("click", () => {
       document.getElementById("startScreen").style.display = "none";
       document.getElementById("gameScreen").style.display = "block";
+      const gameWidth = gameScreen.offsetWidth;
+        const gameHeight = gameScreen.offsetHeight;
+        const characterWidth = character.offsetWidth;
+        const characterHeight = character.offsetHeight;
+
+        posX = (gameWidth - characterWidth) / 2;
+        posY = (gameHeight - characterHeight) / 2;
+        updateCharacterPosition();
     });
+    
   </script>
    <script src="escaperoom.js"></script>
 </body>
