@@ -8,7 +8,17 @@ body {
     justify-content: center; 
     align-items: center;
 }
-      .startbutton {
+#character {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('/Imagenes/blackie_abajo.png'); /* Imagen inicial */
+    background-size: cover;
+  }
+
+
+
+.startbutton {
     position: absolute; 
     top: 50%;
     left: 50%;
