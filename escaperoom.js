@@ -8,18 +8,22 @@ document.addEventListener("keydown", (e) => {
     case "ArrowUp":
     case "w":
       if (posY > 0) posY -= step;
+      character.style.backgroundImage = "url('Imagenes/blackie_arriba.png')";
       break;
     case "ArrowDown":
     case "s":
       if (posY < 360) posY += step;
+        character.style.backgroundImage = "url('Imagenes/blackie_abajo.png')";
       break;
     case "ArrowLeft":
     case "a":
       if (posX > 0) posX -= step;
+        character.style.backgroundImage = "url('Imagenes/blackie_izquierda.png')";
       break;
     case "ArrowRight":
     case "d":
       if (posX < 360) posX += step;
+        character.style.backgroundImage = "url('Imagenes/blackie_derecha.png')";
       break;
   }
   updateCharacterPosition();
