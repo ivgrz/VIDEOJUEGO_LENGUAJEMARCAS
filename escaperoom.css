@@ -34,20 +34,57 @@ body {
 
 #gameScreen {
     position: relative;
-    width: 1000px; 
-    height: 800px; 
-    background-color: skyblue;
-    overflow: hidden; /* Evita que el personaje salga del área visible */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    width: 1024px;
+    height: 576px;
+    background-image: url('Imagenes/fondo.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    overflow: hidden; 
+    margin: 0 auto; 
 }
 
 
 #character {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background-image: url('Imagenes/blackie_abajo_sinfondo.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+}
+
+#maceta {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-image: url('Imagenes/maceta_sinfondo.PNG'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom:  10px; 
+    right: 10px;
+}
+
+#mesa {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background-image: url('Imagenes/mesa_sinfondo.PNG'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 60%; 
+    left: 55%;
+    transform: translate(-50%, -50%); 
+}
+
+#escritorio {
+    position: absolute;
+    width: 150px; 
+    height: 150px;
+    background-image: url('Imagenes/escritorio_sinfondo.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 60px; 
+    right:200px;
 }
