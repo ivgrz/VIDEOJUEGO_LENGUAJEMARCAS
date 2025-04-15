@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PaginaPrincipal</title>
+    <title>Escape Room</title>
     <link rel="stylesheet" href="escaperoom.css">
 </head>
 <body>
@@ -15,23 +15,12 @@
   <!-- Juego principal -->
   <div id="gameScreen" style="display: none;">
       <div class="personaje" id="character"></div>
-  </div>
-  <script>
-    document.getElementById("startButton").addEventListener("click", () => {
-      document.getElementById("startScreen").style.display = "none";
-      document.getElementById("gameScreen").style.display = "block";
-      const gameWidth = gameScreen.offsetWidth;
-        const gameHeight = gameScreen.offsetHeight;
-        const characterWidth = character.offsetWidth;
-        const characterHeight = character.offsetHeight;
+      <div id="maceta" class="object"></div> 
+        <div id="mesa" class="object"></div>  
+  
+    </div>
 
-        posX = (gameWidth - characterWidth) / 2;
-        posY = (gameHeight - characterHeight) / 2;
-        updateCharacterPosition();
-    });
-    
-  </script>
-   <script src="escaperoom.js"></script>
+  <script src="escaperoom.js"></script>
 </body>
 </html>
 

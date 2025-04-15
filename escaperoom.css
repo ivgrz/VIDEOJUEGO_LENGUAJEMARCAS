@@ -1,48 +1,53 @@
+/* Estilo para el cuerpo */
 body {
-    background-color: blanchedalmond;
+    background-color: white;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    height: 100vh; 
-    display: flex; 
-    justify-content: center; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-#gameScreen {
-    
-        position: relative;
-        width: 800px; 
-        height: 600px; 
-        background-color: blanchedalmond;
-        overflow: hidden; 
-        margin: 0 auto; 
-    
+/* Pantalla inicial */
+.startScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #f0f0f0;
 }
 
-
-
-#character {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background-image: url('Imagenes/blackie_abajo.png'); 
-    background-size: cover; 
-    }
-    
-    
-
+/* Botón de inicio */
 .startbutton {
-    position: absolute; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 24px;
-    text-align: center;
     padding: 10px 20px;
+    font-size: 24px;
+    color: white;
     background-color: green;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+
+#gameScreen {
+    position: relative;
+    width: 1000px; 
+    height: 800px; 
+    background-color: skyblue;
+    overflow: hidden; /* Evita que el personaje salga del área visible */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+
+#character {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url('Imagenes/blackie_abajo_sinfondo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }

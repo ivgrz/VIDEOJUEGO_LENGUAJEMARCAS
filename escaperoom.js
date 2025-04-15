@@ -18,42 +18,50 @@ document.addEventListener("DOMContentLoaded", () => {
         characterHeight = character.offsetHeight;
     }
 
-    // Recalcular dimensiones al cargar el juego
-    recalculateDimensions();
-
     // Posicionar al personaje en el centro del contenedor
-    posX = (gameWidth - characterWidth) / 2;
-    posY = (gameHeight - characterHeight) / 2;
-    updateCharacterPosition();
+    function updateCharacterPosition() {
+        character.style.top = posY + "px";
+        character.style.left = posX + "px";
+    }
 
+    // Mostrar el juego y recalcular dimensiones
+    document.getElementById("startButton").addEventListener("click", () => {
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("gameScreen").style.display = "block";
+
+        // Recalcular dimensiones después de mostrar el contenedor
+        recalculateDimensions();
+
+        // Posicionar al personaje en el centro del contenedor
+        posX = (gameWidth - characterWidth) / 2;
+        posY = (gameHeight - characterHeight) / 2;
+        updateCharacterPosition();
+    });
+
+    // Manejar el movimiento del personaje
     document.addEventListener("keydown", (e) => {
         switch (e.key) {
             case "ArrowUp":
             case "w":
                 if (posY > 0) posY -= step;
-                character.style.backgroundImage = "url('Imagenes/blackie_arriba.png')";
+                character.style.backgroundImage =  "url('Imagenes/blackie_arriba_sinfondo.png')";
                 break;
             case "ArrowDown":
             case "s":
                 if (posY + characterHeight < gameHeight) posY += step;
-                character.style.backgroundImage = "url('Imagenes/blackie_abajo.png')";
+                character.style.backgroundImage = "url('Imagenes/blackie_abajo_sinfondo.png')";
                 break;
             case "ArrowLeft":
             case "a":
                 if (posX > 0) posX -= step;
-                character.style.backgroundImage = "url('Imagenes/blackie_izquierda.png')";
+                character.style.backgroundImage = "url('Imagenes/blackie_izquierda_sinfondo.png')";
                 break;
             case "ArrowRight":
             case "d":
                 if (posX + characterWidth < gameWidth) posX += step;
-                character.style.backgroundImage = "url('Imagenes/blackie_derecha.png')";
+                character.style.backgroundImage = "url('Imagenes/blackie_derecha_sinfondo_sisirve.png')";
                 break;
         }
         updateCharacterPosition();
     });
-
-    function updateCharacterPosition() {
-        character.style.top = posY + "px";
-        character.style.left = posX + "px";
-    }
 });
