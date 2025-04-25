@@ -1,4 +1,4 @@
-/* Estilo para el cuerpo */
+
 body {
     background-color: white;
     font-family: Arial, sans-serif;
@@ -10,7 +10,7 @@ body {
     align-items: center;
 }
 
-/* Pantalla inicial */
+
 .startScreen {
     display: flex;
     justify-content: center;
@@ -20,7 +20,7 @@ body {
     background-color: #f0f0f0;
 }
 
-/* Botón de inicio */
+
 .startbutton {
     padding: 10px 20px;
     font-size: 24px;
@@ -34,8 +34,8 @@ body {
 
 #gameScreen {
     position: relative;
-    width: 1024px;
-    height: 576px;
+    width: 100%;
+    height: 100vh;
     background-image: url('Imagenes/fondo.png'); 
     background-size: cover; 
     background-position: center; 
@@ -47,8 +47,8 @@ body {
 
 #character {
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     background-image: url('Imagenes/blackie_abajo_sinfondo.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -62,20 +62,21 @@ body {
     background-image: url('Imagenes/maceta_sinfondo.PNG'); 
     background-size: contain;
     background-repeat: no-repeat;
-    bottom:  10px; 
-    right: 10px;
+    bottom: 5%; 
+    left: 5%;
 }
 
 #mesa {
     position: absolute;
-    width: 250px;
-    height: 250px;
+    width: 450px;
+    height: 450px;
     background-image: url('Imagenes/mesa_sinfondo.PNG'); 
     background-size: contain;
     background-repeat: no-repeat;
     top: 60%; 
-    left: 55%;
-    transform: translate(-50%, -50%); 
+    left: 52%; 
+    transform: translate(-50%, -50%);
+  
 }
 
 #escritorio {
@@ -85,6 +86,29 @@ body {
     background-image: url('Imagenes/escritorio_sinfondo.png'); 
     background-size: contain;
     background-repeat: no-repeat;
-    top: 60px; 
-    right:200px;
+    top: 5%; 
+    right: 5%;
+}
+#puerta {
+    position: absolute;
+    width: 350px; 
+    height: 350px;
+    background-image: url('Imagenes/puerta_sinfondo.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 1%; 
+    left: 20%;
+    
+}
+
+#reloj {
+    position: absolute;
+    width: 100px; 
+    height: 100px;
+    background-image: url('Imagenes/reloj_sinfondo.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 2%; 
+    left: 50%;
+    transform: translateX(-50%);
 }
