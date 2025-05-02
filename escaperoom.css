@@ -59,7 +59,7 @@ body {
     position: absolute;
     width: 200px;
     height: 200px;
-    background-image: url('Imagenes/maceta_sinfondo.PNG'); 
+    background-image: url('Imagenes/maceta_sinfondo_.PNG'); 
     background-size: contain;
     background-repeat: no-repeat;
     bottom: 5%; 
@@ -70,7 +70,7 @@ body {
     position: absolute;
     width: 450px;
     height: 450px;
-    background-image: url('Imagenes/mesa_sinfondo.PNG'); 
+    background-image: url('Imagenes/mesa_sinfondo_.PNG'); 
     background-size: contain;
     background-repeat: no-repeat;
     top: 60%; 
@@ -93,7 +93,7 @@ body {
     position: absolute;
     width: 350px; 
     height: 350px;
-    background-image: url('Imagenes/puerta_sinfondo.png'); 
+    background-image: url('Imagenes/puerta_sinfondo_.PNG'); 
     background-size: contain;
     background-repeat: no-repeat;
     top: 1%; 
