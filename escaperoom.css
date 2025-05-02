@@ -37,8 +37,8 @@ body {
 
 #gameScreen {
     position: relative;
-    width: 80%; /* tamaÃ±o que delimita el juego*/
-    height: 80%;
+    width: 46.2%; /* tamaÃ±o que delimita el juego*/
+    height: 90%;
     background-color: aqua;
     background-size: contain; 
     background-position: center; 
