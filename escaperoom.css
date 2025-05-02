@@ -1,13 +1,15 @@
 
 body {
-    background-color: white;
+    background-color: red;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     height: 100vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 
@@ -35,9 +37,9 @@ body {
 
 #gameScreen {
     position: relative;
-    width: 80%; /* tamaño que delimita el juego*/
+    width: 80%; /* tamaÃ±o que delimita el juego*/
     height: 80%;
-    background-image: url('Imagenes/fondo.png'); 
+    background-color: aqua;
     background-size: contain; 
     background-position: center; 
     background-repeat: no-repeat;
@@ -54,6 +56,7 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    z-index: 10;
 }
 
 #maceta {
@@ -65,6 +68,7 @@ body {
     background-repeat: no-repeat;
     bottom: 9%; 
     left: 29.5%;
+    z-index: 5;
 }
 
 #mesa {
@@ -77,6 +81,7 @@ body {
     top: 55%; 
     left: 52.1%; 
     transform: translate(-50%, -50%);
+    z-index: 5;
   
 }
 
@@ -89,6 +94,7 @@ body {
     background-repeat: no-repeat;
     top: 16%;
     left: 58%;
+    z-index: 5;
 }
 #puerta {
     position: absolute;
@@ -99,7 +105,7 @@ body {
     background-repeat: no-repeat;
     top: 10%; 
     left: 34%;
-    
+    z-index: 5;    
 }
 
 #reloj {
@@ -112,4 +118,15 @@ body {
     top: 4.5%; 
     left: 52%;
     transform: translateX(-50%);
+    z-index: 5;
+}
+#fondo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('Imagenes/fondo.png'); 
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 5;
 }
