@@ -61,25 +61,25 @@ body {
 
 #maceta {
     position: absolute;
-    width: 26%;
-    height: 26%;
+    width: 31%;
+    height: 31%;
     background-image: url('Imagenes/maceta_sinfondo_.PNG'); 
     background-size: contain;
     background-repeat: no-repeat;
-    bottom: 9%; 
-    left: 29.5%;
+    top: 67.5%;
+    left: 3%;
     z-index: 5;
 }
 
 #mesa {
     position: absolute;
-    width: 22%;
-    height: 22%;
+    width: 40%;
+    height: 40%;
     background-image: url('Imagenes/mesa_sinfondo_.PNG'); 
     background-size: contain;
     background-repeat: no-repeat;
-    top: 55%; 
-    left: 52.1%; 
+    top: 64%; 
+    left: 50.1%; 
     transform: translate(-50%, -50%);
     z-index: 5;
   
@@ -87,39 +87,41 @@ body {
 
 #escritorio {
     position: absolute;
-    width: 22%; 
-    height: 22%;
+    width: 27%; 
+    height: 27%;
     background-image: url('Imagenes/escritorio_sinfondo.PNG'); 
     background-size: contain;
     background-repeat: no-repeat;
-    top: 16%;
-    left: 58%;
+    top: 10%;
+    left: 72%;
     z-index: 5;
 }
+
 #puerta {
     position: absolute;
-    width: 22%; 
-    height: 22%;
+    width: 25%; 
+    height: 25%;
     background-image: url('Imagenes/puerta_sinfondo_.PNG'); 
     background-size: contain;
     background-repeat: no-repeat;
-    top: 10%; 
-    left: 34%;
+    top: 3%; 
+    left: 12%;
     z-index: 5;    
 }
 
 #reloj {
     position: absolute;
-    width: 18%;
-    height: 18%;
+    width: 13%;
+    height: 13%;
     background-image: url('Imagenes/reloj_sinfondo.png'); 
     background-size: contain;
     background-repeat: no-repeat;
-    top: 4.5%; 
-    left: 52%;
+    top: 3%; 
+    left: 41%;
     transform: translateX(-50%);
     z-index: 5;
 }
+
 #fondo {
     position: absolute;
     width: 100%;
