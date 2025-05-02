@@ -35,8 +35,8 @@ body {
 
 #gameScreen {
     position: relative;
-    width: 90%;
-    height: 90%;
+    width: 80%; /* tamaño que delimita el juego*/
+    height: 80%;
     background-image: url('Imagenes/fondo.png'); 
     background-size: contain; 
     background-position: center; 
@@ -48,8 +48,8 @@ body {
 
 #character {
     position: absolute;
-    width: 35%;
-    height: 35%;
+    width: 14%;
+    height: 14%;
     background-image: url('Imagenes/blackie_abajo_sinfondo.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -82,13 +82,13 @@ body {
 
 #escritorio {
     position: absolute;
-    width: 55%; 
-    height: 55%;
-    background-image: url('Imagenes/escritorio_sinfondo.png'); 
+    width: 22%; 
+    height: 22%;
+    background-image: url('Imagenes/escritorio_sinfondo.PNG'); 
     background-size: contain;
     background-repeat: no-repeat;
-    bottom: 50.7%;
-    left: 55%;
+    top: 16%;
+    left: 58%;
 }
 #puerta {
     position: absolute;
