@@ -1,4 +1,3 @@
-
 body {
     background-image: url('Imagenes/pantallainicial.jpg');
     font-family: Arial, sans-serif;
@@ -37,7 +36,7 @@ body {
 
 #gameScreen {
     position: relative;
-    width: 46.2%; /* tamaÃ±o que delimita el juego*/
+    width: 46.2%; 
     height: 90%;
     background-color: aqua;
     background-size: contain; 
@@ -50,8 +49,8 @@ body {
 
 #character {
     position: absolute;
-    width: 19%;
-    height: 14%;
+    width: 50px;
+    height: 50px; 
     background-image: url('Imagenes/blackie_abajo_sinfondo.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -61,50 +60,48 @@ body {
 
 #maceta {
     position: absolute;
-    width: 31%;
-    height: 31%;
+    width: 80px;
+    height: 80px; 
     background-image: url('Imagenes/maceta_sinfondo_.PNG'); 
     background-size: contain;
     background-repeat: no-repeat;
-    top: 67.5%;
-    left: 3%;
+    top: 720px; 
+    left: 50px; 
     z-index: 5;
 }
 
 #mesa {
     position: absolute;
-    width: 40%;
-    height: 40%;
+    width: 150px; 
+    height: 100px; 
     background-image: url('Imagenes/mesa_sinfondo_.PNG'); 
     background-size: contain;
     background-repeat: no-repeat;
-    top: 64%; 
-    left: 50.1%; 
-    transform: translate(-50%, -50%);
+    top: 460px; 
+    left: 350px; 
     z-index: 5;
-  
 }
 
 #escritorio {
     position: absolute;
-    width: 27%; 
-    height: 27%;
+    width: 120px; 
+    height: 80px;
     background-image: url('Imagenes/escritorio_sinfondo.PNG'); 
     background-size: contain;
     background-repeat: no-repeat;
-    top: 10%;
-    left: 72%;
+    top: 200px; 
+    left: 700px; 
     z-index: 5;
 }
 
 #puerta {
     position: absolute;
-    width: 25%; 
-    height: 25%;
+    width: 20%; 
+    height: 20%;
     background-image: url('Imagenes/puerta_sinfondo_.PNG'); 
     background-size: contain;
     background-repeat: no-repeat;
-    top: 3%; 
+    top: 9.5%; 
     left: 12%;
     z-index: 5;    
 }
@@ -116,7 +113,7 @@ body {
     background-image: url('Imagenes/reloj_sinfondo.png'); 
     background-size: contain;
     background-repeat: no-repeat;
-    top: 3%; 
+    top: 5%; 
     left: 41%;
     transform: translateX(-50%);
     z-index: 5;
