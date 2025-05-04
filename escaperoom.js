@@ -106,30 +106,43 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function interactWithObject(object) {
+        const messageBox = document.getElementById("messageBox");
+
         // Lógica de interacción específica para cada objeto
         switch (object.id) {
             case "maceta":
-                alert("maceta"); //aqui encuentras la llave y tiene que salir directamente la imagen de la llave
+                messageBox.textContent = "¡Has encontrado una llave!";
+                messageBox.style.display = "block";
                 break;
             case "mesa":
-                alert("mesa"); //aqui NO HAY NADA
+                messageBox.textContent = "Aquí no hay nada.";
+                messageBox.style.display = "block";
                 break;
             case "escritorio":
-                alert("escritorio"); //abres el cajon con la llave que ecncontraste y te da la nota
+                messageBox.textContent = "El cajón está cerrado. Necesitas una llave.";
+                messageBox.style.display = "block";
                 break;
             case "puerta":
-                alert("La puerta está cerrada. Necesitas una llave."); //se necesita hacer el reloj para que se abra
+                messageBox.textContent = "La puerta está cerrada. Necesitas una llave.";
+                messageBox.style.display = "block";
                 break;
             case "reloj":
-                const userInput = prompt("¿Qué hora crees que es? (Formato HH:MM)"); //aqui utilizas la nota para descifrarlo
+                const userInput = prompt("¿Qué hora crees que es? (Formato HH:MM)");
                 if (userInput === "09:42") {
-                    alert("¡Hora correcta!");
+                    messageBox.textContent = "¡Hora correcta!";
                 } else {
-                    alert("Sigue intentando.");
+                    messageBox.textContent = "Sigue intentando.";
                 }
+                messageBox.style.display = "block";
                 break;
             default:
-                alert("No hay nada interesante aquí.");
+                messageBox.textContent = "No hay nada interesante aquí.";
+                messageBox.style.display = "block";
         }
+
+        // Ocultar el mensaje después de 3 segundos
+        setTimeout(() => {
+            messageBox.style.display = "none";
+        }, 3000);
     }
 });
