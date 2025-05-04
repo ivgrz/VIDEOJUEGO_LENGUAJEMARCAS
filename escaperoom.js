@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let posY = 0;
     const step = 20; // Ajusta el paso para que sea proporcional
     let currentCollision = null;
+    let isTimeCorrect = false; // Variable para rastrear si la hora correcta ha sido ingresada
+    let hasKey = false; // Variable para rastrear si el jugador tiene la llave
 
     // Lista de objetos con los que se puede colisionar
     const obstacles = Array.from(document.querySelectorAll(".obstacle"));
@@ -106,33 +108,84 @@ document.addEventListener("DOMContentLoaded", () => {
     function interactWithObject(object) {
         const messageBox = document.getElementById("messageBox");
 
+        // Limpia el contenido previo del mensaje
+        messageBox.innerHTML = "";
+
         // Lógica de interacción específica para cada objeto
         switch (object.id) {
             case "maceta":
-                messageBox.textContent = "¡Has encontrado una llave!";
+                const messageTextMaceta = document.createElement("p");
+                messageTextMaceta.textContent = "¡Has encontrado una llave!";
+                messageBox.appendChild(messageTextMaceta);
+
+                const keyImage = document.createElement("img");
+                keyImage.src = "Imagenes/llavebien.png";
+                keyImage.alt = "Llave";
+                messageBox.appendChild(keyImage);
+
+                hasKey = true; // Marca que el jugador tiene la llave
                 messageBox.style.display = "block";
                 break;
+
             case "mesa":
                 messageBox.textContent = "Es una bonita mesa, pero aquí no hay nada.";
                 messageBox.style.display = "block";
                 break;
+
             case "escritorio":
-                messageBox.textContent = "¡Has logrado abrir el cajón del escritorio y has encontrado una nota!";
-                messageBox.style.display = "block";
-                break;
-            case "puerta":
-                messageBox.textContent = "La puerta está cerrada pero no hay cerradura";
-                messageBox.style.display = "block";
-                break;
-            case "reloj":
-                const userInput = prompt("¿Qué hora crees que es? (Formato HH:MM)");
-                if (userInput === "09:42") {
-                    messageBox.textContent = "¡Hora correcta!";
+                if (hasKey) {
+                    const messageTextEscritorio = document.createElement("p");
+                    messageTextEscritorio.textContent = "¡Has logrado abrir el cajón del escritorio y has encontrado una nota!";
+                    messageBox.appendChild(messageTextEscritorio);
+
+                    const noteImage = document.createElement("img");
+                    noteImage.src = "Imagenes/CODIGOH.png";
+                    noteImage.alt = "Nota";
+                    noteImage.style.width = "300px";
+                    noteImage.style.height = "auto";
+                    noteImage.style.margin = "10px auto";
+                    messageBox.appendChild(noteImage);
                 } else {
-                    messageBox.textContent = "Sigue intentando.";
+                    messageBox.textContent = "El cajón está cerrado. Necesitas una llave para abrirlo.";
                 }
                 messageBox.style.display = "block";
                 break;
+
+            case "puerta":
+                if (isTimeCorrect) {
+                    messageBox.textContent = "¡La puerta está abierta! Puedes salir.";
+
+                    // Crear botón de reinicio
+                    const restartButton = document.createElement("button");
+                    restartButton.textContent = "Reiniciar Juego";
+                    restartButton.style.marginTop = "10px";
+                    restartButton.style.padding = "10px 20px";
+                    restartButton.style.cursor = "pointer";
+
+                    // Agregar evento para recargar la página
+                    restartButton.addEventListener("click", () => {
+                        location.reload();
+                    });
+
+                    // Agregar el botón al mensaje
+                    messageBox.appendChild(restartButton);
+                } else {
+                    messageBox.textContent = "La puerta está cerrada. Necesitas resolver el reloj primero.";
+                }
+                messageBox.style.display = "block";
+                break;
+
+            case "reloj":
+                const userInput = prompt("¿Qué hora crees que es?");
+                if (userInput === "09:42") {
+                    isTimeCorrect = true; // Marca la hora como correcta
+                    messageBox.textContent = "que temprano, no?";
+                } else {
+                    messageBox.textContent = "Justo esa no es";
+                }
+                messageBox.style.display = "block";
+                break;
+
             default:
                 messageBox.textContent = "No hay nada interesante aquí.";
                 messageBox.style.display = "block";
