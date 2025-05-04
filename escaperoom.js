@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Lógica de interacción específica para cada objeto
         switch (object.id) {
             case "maceta":
-                messageBox.textContent = "¡Has encontrado una llave!";
+                messageBox.textContent = "¡Has encontrado una llave!"; //lograr conseguir poner la imagen
                 messageBox.style.display = "block";
                 break;
             case "mesa":
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 messageBox.style.display = "block";
                 break;
             case "escritorio":
-                messageBox.textContent = "El cajón está cerrado. Donde podria estar la llave?";
+                messageBox.textContent = "¡Has logrado abrir el cajón del escritorio y has encontrado una nota!"; //lograr conseguir poner la imagen
                 messageBox.style.display = "block";
                 break;
             case "puerta":
