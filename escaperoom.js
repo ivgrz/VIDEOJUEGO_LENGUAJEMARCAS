@@ -115,15 +115,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 messageBox.style.display = "block";
                 break;
             case "mesa":
-                messageBox.textContent = "Aquí no hay nada.";
+                messageBox.textContent = "Es una bonita mesa, pero aquí no hay nada.";
                 messageBox.style.display = "block";
                 break;
             case "escritorio":
-                messageBox.textContent = "El cajón está cerrado. Necesitas una llave.";
+                messageBox.textContent = "El cajón está cerrado. Donde podria estar la llave?";
                 messageBox.style.display = "block";
                 break;
             case "puerta":
-                messageBox.textContent = "La puerta está cerrada. Necesitas una llave.";
+                messageBox.textContent = "La puerta está cerrada pero no hay cerradura";
                 messageBox.style.display = "block";
                 break;
             case "reloj":
