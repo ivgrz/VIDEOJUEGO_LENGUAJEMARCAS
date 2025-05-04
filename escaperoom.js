@@ -1,57 +1,57 @@
 document.addEventListener("DOMContentLoaded", () => {
     const character = document.getElementById("character");
-    const gameScreen = document.getElementById("gameScreen");
+    const fondo = document.getElementById("fondo");
 
     let posX = 0;
     let posY = 0;
-    const step = 20;
-    let currentCollision = null; // Almacena el objeto con el que se está colisionando
+    const step = 20; // Ajusta el paso para que sea proporcional
+    let currentCollision = null;
 
     // Lista de objetos con los que se puede colisionar
     const obstacles = Array.from(document.querySelectorAll(".obstacle"));
 
     document.getElementById("startButton").addEventListener("click", () => {
         document.getElementById("startScreen").style.display = "none";
-        gameScreen.style.display = "block";
+        document.getElementById("gameScreen").style.display = "block";
 
-        // Posicionar el personaje en la parte baja derecha
-        posX = gameScreen.offsetWidth - character.offsetWidth - 10; // 10px de margen
-        posY = gameScreen.offsetHeight - character.offsetHeight - 10; // 10px de margen
+        // Posicionar el personaje en la parte baja derecha del contenedor
+        posX = fondo.offsetWidth - character.offsetWidth - 10; // 10px de margen
+        posY = fondo.offsetHeight - character.offsetHeight - 10; // 10px de margen
         updateCharacterPosition();
     });
 
     function updateCharacterPosition() {
-        character.style.top = posY + "px";
-        character.style.left = posX + "px";
-        console.log(`Posición actualizada: (${posX}, ${posY})`);
+        character.style.top = `${posY}px`;
+        character.style.left = `${posX}px`;
+        console.log(`Posición actualizada: (${posX}px, ${posY}px)`);
     }
 
     function checkCollision() {
         const characterRect = character.getBoundingClientRect();
-        console.log("Character Rect:", characterRect);
-        currentCollision = null; // Reinicia la colisión actual
+        const fondoRect = fondo.getBoundingClientRect();
+        currentCollision = null;
 
         for (const obstacle of obstacles) {
             const obstacleRect = obstacle.getBoundingClientRect();
-            console.log(`Obstacle (${obstacle.id}) Rect:`, obstacleRect);
 
+            // Verificar colisión
             if (
                 characterRect.left < obstacleRect.right &&
                 characterRect.right > obstacleRect.left &&
                 characterRect.top < obstacleRect.bottom &&
                 characterRect.bottom > obstacleRect.top
             ) {
-                currentCollision = obstacle; // Guarda el objeto con el que se colisiona
+                currentCollision = obstacle;
                 console.log(`Colisión detectada con: ${obstacle.id}`);
-                return true; 
+                return true;
             }
         }
         console.log("Sin colisión con ningún obstáculo");
-        return false; 
+        return false;
     }
 
     document.addEventListener("keydown", (e) => {
-        const gameScreenRect = gameScreen.getBoundingClientRect();
+        const fondoRect = fondo.getBoundingClientRect();
         const characterRect = character.getBoundingClientRect();
 
         let prevPosX = posX;
@@ -60,28 +60,28 @@ document.addEventListener("DOMContentLoaded", () => {
         switch (e.key) {
             case "ArrowUp":
             case "w":
-                if (characterRect.top - step >= gameScreenRect.top) {
+                if (characterRect.top - step >= fondoRect.top) {
                     posY -= step;
                     character.style.backgroundImage = "url('Imagenes/blackie_arriba_sinfondo.png')";
                 }
                 break;
             case "ArrowDown":
             case "s":
-                if (characterRect.bottom + step <= gameScreenRect.bottom) {
+                if (characterRect.bottom + step <= fondoRect.bottom) {
                     posY += step;
                     character.style.backgroundImage = "url('Imagenes/blackie_abajo_sinfondo.png')";
                 }
                 break;
             case "ArrowLeft":
             case "a":
-                if (characterRect.left - step >= gameScreenRect.left) {
+                if (characterRect.left - step >= fondoRect.left) {
                     posX -= step;
                     character.style.backgroundImage = "url('Imagenes/blackie_izquierda_sinfondo.png')";
                 }
                 break;
             case "ArrowRight":
             case "d":
-                if (characterRect.right + step <= gameScreenRect.right) {
+                if (characterRect.right + step <= fondoRect.right) {
                     posX += step;
                     character.style.backgroundImage = "url('Imagenes/blackie_derecha_sinfondo.png')";
                 }
@@ -100,8 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
             posX = prevPosX;
             posY = prevPosY;
             updateCharacterPosition();
-        } else {
-            console.log("Sin colisión");
         }
     });
 
@@ -111,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Lógica de interacción específica para cada objeto
         switch (object.id) {
             case "maceta":
-                messageBox.textContent = "¡Has encontrado una llave!"; //lograr conseguir poner la imagen
+                messageBox.textContent = "¡Has encontrado una llave!";
                 messageBox.style.display = "block";
                 break;
             case "mesa":
@@ -119,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 messageBox.style.display = "block";
                 break;
             case "escritorio":
-                messageBox.textContent = "¡Has logrado abrir el cajón del escritorio y has encontrado una nota!"; //lograr conseguir poner la imagen
+                messageBox.textContent = "¡Has logrado abrir el cajón del escritorio y has encontrado una nota!";
                 messageBox.style.display = "block";
                 break;
             case "puerta":

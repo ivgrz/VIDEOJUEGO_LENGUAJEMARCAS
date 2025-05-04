@@ -10,20 +10,31 @@
   <!-- Pantalla inicial -->
   <div id="startScreen" class="startScreen">
       <button id="startButton" class="startbutton">Comenzar Juego</button>
-      <src id="pantallainicial" src="pantallainicial.jpg" alt="Fondo de la pantalla de inicio" class="fondo">
   </div>
 
   <!-- Juego principal -->
   <div id="gameScreen" style="display: none;">
-        <div id="fondo" class="fondo"></div>
-        <div id="character"></div>
-        <div id="maceta" class="obstacle"></div> 
-        <div id="mesa" class="obstacle"></div>  
-        <div id="escritorio" class="obstacle"></div>
-        <div id="reloj" class="obstacle"></div> <!-- Agregada la clase obstacle -->
-        <div id="puerta" class="obstacle"></div> <!-- Agregada la clase obstacle -->
-        <div id="messageBox"></div>
-      
+      <div id="fondo" class="fondo">
+          <div id="character">
+              
+          </div>
+          <div id="maceta" class="obstacle">
+              <img src="Imagenes/maceta_sinfondo_.PNG" alt="Maceta">
+          </div>
+          <div id="mesa" class="obstacle">
+              <img src="Imagenes/mesa_sinfondo_.PNG" alt="Mesa">
+          </div>
+          <div id="escritorio" class="obstacle">
+              <img src="Imagenes/escritorio_sinfondo.PNG" alt="Escritorio">
+          </div>
+          <div id="reloj" class="obstacle">
+              <img src="Imagenes/reloj_sinfondo.png" alt="Reloj">
+          </div>
+          <div id="puerta" class="obstacle">
+              <img src="Imagenes/puerta_sinfondo_.PNG" alt="Puerta">
+          </div>
+      </div>
+      <div id="messageBox"></div>
   </div>
 
   <script src="escaperoom.js"></script>

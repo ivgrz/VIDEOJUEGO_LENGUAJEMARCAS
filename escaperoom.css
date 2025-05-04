@@ -36,9 +36,9 @@ body {
 
 #gameScreen {
     position: relative;
-    width: 46.2%; 
-    height: 90%;
-    background-color: aqua;
+    width: 40%; /* Reducido proporcionalmente */
+    height: 80%; /* Reducido proporcionalmente */
+    background-color: hidden; /* Oculta el fondo del contenedor */
     background-size: contain; 
     background-position: center; 
     background-repeat: no-repeat;
@@ -49,85 +49,103 @@ body {
 
 #character {
     position: absolute;
-    width: 30%;
-    height: 15%; 
+    width: 10%; /* Reducido proporcionalmente */
+    height: 10%; /* Reducido proporcionalmente */
     background-image: url('Imagenes/blackie_abajo_sinfondo.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     z-index: 10;
+    border: 2px solid blue; /* Borde para depuración */
+}
+
+ .obstacle {
+    border: 2px solid red; /* Borde temporal para depuración */
 }
 
 #maceta {
     position: absolute;
-    width: 28%;
-    height: 28%; 
-    background-image: url('Imagenes/maceta_sinfondo_.PNG'); 
-    background-size: contain;
-    background-repeat: no-repeat;
+    width: 10%; /* Reducido proporcionalmente */
+    height: auto; /* Reducido proporcionalmente */
+    
     bottom: 2%; 
     left: 2%; 
     z-index: 5;
 }
+#maceta img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Asegura que la imagen mantenga sus proporciones */
+}
 
 #mesa {
     position: absolute;
-    width: 40%; 
-    height: 40%; 
-    background-image: url('Imagenes/mesa_sinfondo_.PNG'); 
-    background-size: contain;
-    background-repeat: no-repeat;
-    top: 44%; 
-    left: 30%; 
+    width: 25%; /* Ajusta según sea necesario */
+    height: auto; 
+    top: 50%; 
+    left: 36%; 
     z-index: 5;
+}
+
+#mesa img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Asegura que la imagen mantenga sus proporciones */
 }
 
 #escritorio {
     position: absolute;
-    width: 27%; 
-    height: 27%;
-    background-image: url('Imagenes/escritorio_sinfondo.PNG'); 
-    background-size: contain;
-    background-repeat: no-repeat;
-    top: 11%; 
-    left: 72%; 
+    width: 22%; /* Reducido proporcionalmente */
+    height: auto;
+    top: 20%; 
+    left: 70%; 
     z-index: 5;
+}
+#escritorio img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Asegura que la imagen mantenga sus proporciones */
 }
 
 #puerta {
     position: absolute;
-    width: 25%; 
-    height: 25%;
-    background-image: url('Imagenes/puerta_sinfondo_.PNG'); 
-    background-size: contain;
-    background-repeat: no-repeat;
-    top: 3%; 
-    left: 12%;
+    width: 20%; /* Reducido proporcionalmente */
+    height: auto; /* Reducido proporcionalmente */
+    top: 2%; 
+    left: 6%;
     z-index: 5;    
+}
+#puerta img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain; /* Asegura que la imagen mantenga sus proporciones */
 }
 
 #reloj {
     position: absolute;
-    width: 13%;
-    height: 13%;
-    background-image: url('Imagenes/reloj_sinfondo.png'); 
-    background-size: contain;
-    background-repeat: no-repeat;
+    width: 10%; /* Reducido proporcionalmente */
+    height: auto; /* Reducido proporcionalmente */  
     top: 3%; 
     left: 41%;
     transform: translateX(-50%);
     z-index: 5;
 }
+#reloj img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Asegura que la imagen mantenga sus proporciones */
+}
 
 #fondo {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 100%; /* Mantén el tamaño relativo al contenedor padre */
+    height: 100%; /* Mantén el tamaño relativo al contenedor padre */
     background-image: url('Imagenes/fondo.png'); 
-    background-size: contain; 
+    background-size: cover; 
     background-repeat: no-repeat;
     background-position: center;
     z-index: 5;
+   
 }
 
 #messageBox  {
