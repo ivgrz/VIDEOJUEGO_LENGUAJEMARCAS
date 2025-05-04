@@ -109,19 +109,19 @@ document.addEventListener("DOMContentLoaded", () => {
         // Lógica de interacción específica para cada objeto
         switch (object.id) {
             case "maceta":
-                alert("Es una maceta. Parece que no hay nada especial aquí.");
+                alert("maceta"); //aqui encuentras la llave y tiene que salir directamente la imagen de la llave
                 break;
             case "mesa":
-                alert("Encontraste una llave en la mesa.");
+                alert("mesa"); //aqui NO HAY NADA
                 break;
             case "escritorio":
-                alert("Es un escritorio. Hay un cajón cerrado.");
+                alert("escritorio"); //abres el cajon con la llave que ecncontraste y te da la nota
                 break;
             case "puerta":
-                alert("La puerta está cerrada. Necesitas una llave.");
+                alert("La puerta está cerrada. Necesitas una llave."); //se necesita hacer el reloj para que se abra
                 break;
             case "reloj":
-                const userInput = prompt("¿Qué hora crees que es? (Formato HH:MM)");
+                const userInput = prompt("¿Qué hora crees que es? (Formato HH:MM)"); //aqui utilizas la nota para descifrarlo
                 if (userInput === "09:42") {
                     alert("¡Hora correcta!");
                 } else {
