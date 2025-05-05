@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
         switch (object.id) {
             case "maceta":
                 const messageTextMaceta = document.createElement("p");
-                messageTextMaceta.textContent = "¡Has encontrado una llave!";
+                messageTextMaceta.textContent = "¡Encontré una llave! (っ◕‿◕)っ ♥";
                 messageBox.appendChild(messageTextMaceta);
 
                 const keyImage = document.createElement("img");
@@ -135,18 +135,18 @@ document.addEventListener("DOMContentLoaded", () => {
             case "escritorio":
                 if (hasKey) {
                     const messageTextEscritorio = document.createElement("p");
-                    messageTextEscritorio.textContent = "¡Logré abrir el cajón del escritorio y he encontrado una nota!";
+                    messageTextEscritorio.textContent = "¡Logré abrir el cajón del escritorio y he encontrado una nota! (◑.◑)";
                     messageBox.appendChild(messageTextEscritorio);
 
                     const noteImage = document.createElement("img");
                     noteImage.src = "Imagenes/CODIGOH.png";
                     noteImage.alt = "Nota";
-                    noteImage.style.width = "300px";
+                    noteImage.style.width = "100px";
                     noteImage.style.height = "auto";
                     noteImage.style.margin = "10px auto";
                     messageBox.appendChild(noteImage);
                 } else {
-                    messageBox.textContent = "El cajón está cerrado. Necesito una llave para abrirlo.";
+                    messageBox.textContent = "El cajón está cerrado. Necesito una llave";
                 }
                 messageBox.style.display = "block";
                 break;
@@ -185,9 +185,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 messageBox.style.display = "block";
                 break;
-
+//esto sobra???
             default:
-                messageBox.textContent = "No hay nada interesante aquí.";
+                messageBox.textContent = "No hay nada interesante aquí";
                 messageBox.style.display = "block";
         }
 
