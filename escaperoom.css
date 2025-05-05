@@ -33,6 +33,11 @@ body {
     cursor: pointer;
 }
 
+.startbutton:active {
+    transform: scale(0.95); /* Reduce ligeramente el tamaño del botón */
+    box-shadow: 0 0 10px rgb(255, 142, 185); /* Agrega un efecto de sombra */
+    background-color: rgb(220, 130, 150); /* Cambia ligeramente el color de fondo */
+}
 
 #gameScreen {
     position: relative;
@@ -78,7 +83,7 @@ body {
     position: absolute;
     width: 36%; /* Ajusta según sea necesario */
     height: auto; 
-    top: 47%; 
+    top: 48%; 
     left: 31.6%; 
     z-index: 5;
 }
@@ -94,8 +99,8 @@ body {
     width: 25%; /* Reducido proporcionalmente */
     height: 25%;;
     height: auto;
-    top: 11%; 
-    left: 72%; 
+    top: 12%; 
+    left: 73%; 
     z-index: 5;
 }
 #escritorio img {
