@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
             case "escritorio":
                 if (hasKey) {
                     const messageTextEscritorio = document.createElement("p");
-                    messageTextEscritorio.textContent = "¡Has logrado abrir el cajón del escritorio y has encontrado una nota!";
+                    messageTextEscritorio.textContent = "¡Logré abrir el cajón del escritorio y he encontrado una nota!";
                     messageBox.appendChild(messageTextEscritorio);
 
                     const noteImage = document.createElement("img");
@@ -146,14 +146,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     noteImage.style.margin = "10px auto";
                     messageBox.appendChild(noteImage);
                 } else {
-                    messageBox.textContent = "El cajón está cerrado. Necesitas una llave para abrirlo.";
+                    messageBox.textContent = "El cajón está cerrado. Necesito una llave para abrirlo.";
                 }
                 messageBox.style.display = "block";
                 break;
 
             case "puerta":
                 if (isTimeCorrect) {
-                    messageBox.textContent = "¡La puerta está abierta! Puedes salir.";
+                    messageBox.textContent = "¡La puerta está abierta! ¡Lo he logrado!";
 
                     // Crear botón de reinicio
                     const restartButton = document.createElement("button");
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     // Agregar el botón al mensaje
                     messageBox.appendChild(restartButton);
                 } else {
-                    messageBox.textContent = "La puerta está cerrada. Necesitas resolver el reloj primero.";
+                    messageBox.textContent = "La puerta está cerrada. Tengo que buscar la forma de abrirla (ㆆ_ㆆ)";
                 }
                 messageBox.style.display = "block";
                 break;
@@ -179,9 +179,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 const userInput = prompt("¿Qué hora crees que es?");
                 if (userInput === "09:42") {
                     isTimeCorrect = true; // Marca la hora como correcta
-                    messageBox.textContent = "que temprano, no?";
+                    messageBox.textContent = "¿Qué temprano, no?";
                 } else {
-                    messageBox.textContent = "Justo esa no es";
+                    messageBox.textContent = "Justo esa no es ( ˘︹˘ )";
                 }
                 messageBox.style.display = "block";
                 break;
