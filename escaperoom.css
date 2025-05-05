@@ -56,12 +56,8 @@ body {
     background-size: contain;
     background-position: center;
     z-index: 10;
-    border: 2px solid blue; /* Borde para depuración */
 }
 
- .obstacle {
-    border: 2px solid red; /* Borde temporal para depuración */
-}
 
 #maceta {
     position: absolute;
@@ -112,7 +108,7 @@ body {
     position: absolute;
     width: 15%; /* Reducido proporcionalmente */
     height: auto; /* Reducido proporcionalmente */
-    top: 1%; 
+    top: 1.9%; 
     left: 10%;
     z-index: 5;    
 }
