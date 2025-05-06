@@ -4,21 +4,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let posX = 0;
     let posY = 0;
-    const step = 20; // Ajusta el paso para que sea proporcional
+    const step = 20; 
     let currentCollision = null;
-    let isTimeCorrect = false; // Variable para rastrear si la hora correcta ha sido ingresada
-    let hasKey = false; // Variable para rastrear si el jugador tiene la llave
+    let isTimeCorrect = false; 
+    let hasKey = false; 
 
-    // Lista de objetos con los que se puede colisionar
+    // Objetos con los que puede colisionar
     const obstacles = Array.from(document.querySelectorAll(".obstacle"));
 
     document.getElementById("startButton").addEventListener("click", () => {
         document.getElementById("startScreen").style.display = "none";
         document.getElementById("gameScreen").style.display = "block";
 
-        // Posicionar el personaje en la parte baja derecha del contenedor
-        posX = fondo.offsetWidth - character.offsetWidth - 10; // 10px de margen
-        posY = fondo.offsetHeight - character.offsetHeight - 10; // 10px de margen
+        // Posicionar el personaje en la parte baja derecha 
+        posX = fondo.offsetWidth - character.offsetWidth - 10; 
+        posY = fondo.offsetHeight - character.offsetHeight - 10; 
         updateCharacterPosition();
     });
 
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         for (const obstacle of obstacles) {
             const obstacleRect = obstacle.getBoundingClientRect();
 
-            // Verificar colisión
+            // Colisión
             if (
                 characterRect.left < obstacleRect.right &&
                 characterRect.right > obstacleRect.left &&
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     character.style.backgroundImage = "url('Imagenes/blackie_derecha_sinfondo.png')";
                 }
                 break;
-            case "e": // Interacción con la tecla "e"
+            case "e": 
                 if (currentCollision) {
                     interactWithObject(currentCollision);
                 }
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Limpia el contenido previo del mensaje
         messageBox.innerHTML = "";
 
-        // Lógica de interacción específica para cada objeto
+        // Interaccion con cada objeto
         switch (object.id) {
             case "maceta":
                 const messageTextMaceta = document.createElement("p");
@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     restartButton.style.padding = "10px 20px";
                     restartButton.style.cursor = "pointer";
 
-                    // Agregar evento para recargar la página
+                    // Recargar la página
                     restartButton.addEventListener("click", () => {
                         location.reload();
                     });
@@ -185,15 +185,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 messageBox.style.display = "block";
                 break;
-//esto sobra???
+
             default:
                 messageBox.textContent = "No hay nada interesante aquí";
                 messageBox.style.display = "block";
         }
 
-        // Ocultar el mensaje después de 3 segundos
+        // Duracion del mensaje
         setTimeout(() => {
             messageBox.style.display = "none";
-        }, 3000);
+        }, 5000);
     }
 });

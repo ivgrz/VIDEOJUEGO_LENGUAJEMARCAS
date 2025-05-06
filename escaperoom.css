@@ -34,16 +34,16 @@ body {
 }
 
 .startbutton:active {
-    transform: scale(0.95); /* Reduce ligeramente el tamaño del botón */
-    box-shadow: 0 0 10px rgb(255, 142, 185); /* Agrega un efecto de sombra */
-    background-color: rgb(220, 130, 150); /* Cambia ligeramente el color de fondo */
+    transform: scale(0.95); 
+    box-shadow: 0 0 10px rgb(255, 142, 185); 
+    background-color: rgb(220, 130, 150); 
 }
 
 #gameScreen {
     position: relative;
-    width: 40%; /* Reducido proporcionalmente */
-    height: 80%; /* Reducido proporcionalmente */
-    background-color: hidden; /* Oculta el fondo del contenedor */
+    width: 40%; 
+    height: 80%; 
+    background-color: hidden; 
     background-size: contain; 
     background-position: center; 
     background-repeat: no-repeat;
@@ -54,8 +54,8 @@ body {
 
 #character {
     position: absolute;
-    width: 13%; /* Reducido proporcionalmente */
-    height: 11%; /* Reducido proporcionalmente */
+    width: 13%; 
+    height: 11%; 
     background-image: url('Imagenes/blackie_abajo_sinfondo.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -66,8 +66,8 @@ body {
 
 #maceta {
     position: absolute;
-    width: 10%; /* Reducido proporcionalmente */
-    height: auto; /* Reducido proporcionalmente */
+    width: 10%; 
+    height: auto; 
     
     bottom: 2%; 
     left: 2%; 
@@ -76,12 +76,12 @@ body {
 #maceta img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Asegura que la imagen mantenga sus proporciones */
+    object-fit: contain;
 }
 
 #mesa {
     position: absolute;
-    width: 36%; /* Ajusta según sea necesario */
+    width: 36%; 
     height: auto; 
     top: 48%; 
     left: 31.6%; 
@@ -91,12 +91,12 @@ body {
 #mesa img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Asegura que la imagen mantenga sus proporciones */
+    object-fit: contain;
 }
 
 #escritorio {
     position: absolute;
-    width: 25%; /* Reducido proporcionalmente */
+    width: 25%; 
     height: 25%;;
     height: auto;
     top: 12%; 
@@ -106,13 +106,13 @@ body {
 #escritorio img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Asegura que la imagen mantenga sus proporciones */
+    object-fit: contain; 
 }
 
 #puerta {
     position: absolute;
-    width: 15%; /* Reducido proporcionalmente */
-    height: auto; /* Reducido proporcionalmente */
+    width: 15%; 
+    height: auto; 
     top: 1.9%; 
     left: 10%;
     z-index: 5;    
@@ -120,13 +120,13 @@ body {
 #puerta img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Asegura que la imagen mantenga sus proporciones */
+    object-fit: contain;
 }
 
 #reloj {
     position: absolute;
-    width: 13%; /* Reducido proporcionalmente */
-    height: auto; /* Reducido proporcionalmente */  
+    width: 13%; 
+    height: auto;  
     top: 3%; 
     left: 41%;
     transform: translateX(-50%);
@@ -135,13 +135,13 @@ body {
 #reloj img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Asegura que la imagen mantenga sus proporciones */
+    object-fit: contain;
 }
 
 #fondo {
     position: absolute;
-    width: 100%; /* Mantén el tamaño relativo al contenedor padre */
-    height: 100%; /* Mantén el tamaño relativo al contenedor padre */
+    width: 100%; 
+    height: 100%; 
     background-image: url('Imagenes/fondo.png'); 
     background-size: cover; 
     background-repeat: no-repeat;
@@ -166,8 +166,8 @@ body {
 }
 
 #messageBox img {
-    max-width: 100px; /* Ajusta el tamaño máximo de la imagen */
+    max-width: 100px; 
     max-height: 100px;
     display: block;
-    margin: 10px auto; /* Centra la imagen dentro del mensaje */
+    margin: 10px auto; 
 }
