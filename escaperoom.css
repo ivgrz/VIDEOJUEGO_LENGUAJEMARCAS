@@ -18,7 +18,7 @@ body {
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-image: url('Imagenes/pantallainicial.jpg');
+    background-image: url('Imagenes/pantallainicial2.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -29,9 +29,13 @@ body {
     flex-direction: column; /* Disposición vertical */
     justify-content: center;
     align-items: center;
+    width: 20%;
+    height: 50%;
     background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
     padding: 20px;
     border-radius: 15px;
+    border: solid 4px rgb(253, 109, 140);
+
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el contenedor */
 }
 
@@ -40,9 +44,9 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 10px 20px;
     font-size: 50px;
-    color: black;
-        background-color: rgb(241, 158, 172); /* Mantener el color original */
-    border: solid 4px black;
+    color: rgb(253, 109, 140);
+        background-color: rgb(245, 180, 191); /* Mantener el color original */
+    border: solid 4px rgb(253, 109, 140);
     border-radius: 15px;
     cursor: pointer;
     margin: 10px 0; /* Espaciado vertical entre botones */
@@ -51,13 +55,15 @@ body {
 }
 
 .startbutton:hover {
-    background-color: rgb(255, 200, 200); /* Cambia el fondo a un tono más claro al pasar el mouse */
+    background-color: rgba(224, 206, 213, 0.438); /* Cambia el fondo a un tono más claro al pasar el mouse */
 }
 
 .startbutton:active {
     transform: scale(0.95); /* Reduce ligeramente el tamaño al hacer clic */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce la sombra al hacer clic */
 }
+
+
 
 #gameScreen {
     position: relative;
@@ -200,14 +206,15 @@ body {
 #timer {
     position: absolute;
     top: 10px;
-    left: 90%;
+    left: 50%;
     transform: translateX(-50%);
-    font-size: 24px;
+    font-size: 15px;
     font-weight: bold;
     color: white;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 5px 10px;
     border-radius: 5px;
+
     z-index: 1000;
 }
 
@@ -222,8 +229,8 @@ body {
 }
 
 #interactionImageContainer img {
-    max-width: 70%;
-    max-height: 70%;
+    max-width: 60%;
+    max-height: 60%;
     margin-bottom: 10px;
 }
 
@@ -282,7 +289,7 @@ body {
     font-size: 24px;
     color: white;
     background-color: rgb(241, 158, 172);
-    border: solid 4px black;
+    border: solid 4px rgb(255, 253, 253);
     border-radius: 15px;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -301,4 +308,11 @@ body {
 .fondo-transparent {
     opacity: 0.5; /* Reduce la opacidad al 50% */
     transition: opacity 0.3s ease; /* Transición suave para el cambio de opacidad */
+}
+
+.tutorial-image {
+    max-width: 100%; /* La imagen no será más ancha que su contenedor */
+    height: 10%; /* Mantiene las proporciones de la imagen */
+    display: block; /* Centra la imagen si es necesario */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
 }

@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
         messageBox.classList.add("out-of-time");
 
         const outOfTimeMessage = document.createElement("p");
-        outOfTimeMessage.textContent = "¡Te quedaste sin tiempo! (╯°□°）╯︵ ┻━┻";
+        outOfTimeMessage.textContent = "¡Te quedaste sin tiempo!";
         messageBox.appendChild(outOfTimeMessage);
         messageBox.style.display = "block";
 
@@ -253,10 +253,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Mostrar el modal con información del tutorial
     tutorialButton.addEventListener("click", () => {
         modalText.innerHTML = `
-            <h2>Tutorial</h2>
-            <p>Bienvenido al Escape Room. Usa las teclas de flecha o WASD para moverte.</p>
+            <h1>Tutorial</h1>
+            <img src="Imagenes/Teclas1.png" alt="Controles del juego" class="tutorial-image">
+            <p>Bienvenido al Blackie Scape. Usa las teclas de flecha o "W" "A" "S" "D" para moverte.</p>
             <p>Interactúa con los objetos presionando la tecla "E".</p>
-            <p>¡Resuelve los acertijos y escapa antes de que se acabe el tiempo!</p>
+            <h3><p>¡Resuelve los acertijos y escapa antes de que se acabe el tiempo!</p><h3>
         `;
         modal.style.display = "flex";
     });
@@ -264,11 +265,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Mostrar el modal con información de los créditos
     creditsButton.addEventListener("click", () => {
         modalText.innerHTML = `
-            <h2>Créditos</h2>
+            <h1>Créditos</h1>
             <p>Desarrollado por: Andrea Mouriño e Iván Gutiérrez</p>
-            <p>Imágenes: Andrea Mouriño </p>
+            <p>Imágenes/Ilustraciones: Andrea Mouriño </p>
             <p> Personajes: Blackie como <b>Blackie</b></p>
-            <p>Gracias por jugar.</p>
+            <h3><p>Gracias por jugar.</p><h3>
         `;
         modal.style.display = "flex";
     });
