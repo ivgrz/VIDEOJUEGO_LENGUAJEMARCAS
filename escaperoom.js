@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const obstacles = Array.from(document.querySelectorAll(".obstacle"));
 
+    
     document.getElementById("startButton").addEventListener("click", () => {
         document.getElementById("startScreen").style.display = "none";
         document.getElementById("gameScreen").style.display = "block";
@@ -159,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const userInput = prompt("¿Qué hora crees que es?");
                 if (userInput === "09:42") {
                     isTimeCorrect = true;
-                    messageBox.textContent = "¡Correcto! La hora es 09:42. (⌐■_■)";
+                    messageBox.textContent = "Que temprano, ¿no? (¬‿¬)";
                 } else {
                     messageBox.textContent = "Justo esa no es ( ˘︹˘ )";
                 }
@@ -169,22 +170,21 @@ document.addEventListener("DOMContentLoaded", () => {
             case "puerta":
                 if (isTimeCorrect) {
                     messageBox.textContent = "¡La puerta está abierta! ¡Lo he logrado!";
+                    messageBox.style.display = "block";
 
-                    const restartButton = document.createElement("button");
-                    restartButton.textContent = "Reiniciar Juego";
-                    restartButton.style.marginTop = "10px";
-                    restartButton.style.padding = "10px 20px";
-                    restartButton.style.cursor = "pointer";
+                    // Mostrar el contenedor del botón de reinicio
+                    const restartContainer = document.getElementById("restartContainer");
+                    const restartButton = document.getElementById("restartButton");
+                    restartContainer.style.display = "flex";
 
+                    // Reiniciar el juego al hacer clic en el botón
                     restartButton.addEventListener("click", () => {
                         location.reload();
                     });
-
-                    messageBox.appendChild(restartButton);
                 } else {
                     messageBox.textContent = "La puerta está cerrada. Tengo que buscar la forma de abrirla (ㆆ_ㆆ)";
+                    messageBox.style.display = "block";
                 }
-                messageBox.style.display = "block";
                 break;
 
             default:
@@ -220,22 +220,68 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function showOutOfTimeMessage() {
         const messageBox = document.getElementById("messageBox");
+        const restartContainer = document.getElementById("restartContainer");
+        const restartButton = document.getElementById("restartButton");
 
-        messageBox.innerHTML = "";
+        // Mostrar mensaje de tiempo agotado en el messageBox
+        messageBox.innerHTML = ""; // Limpia el contenido previo
         messageBox.classList.add("out-of-time");
 
         const outOfTimeMessage = document.createElement("p");
         outOfTimeMessage.textContent = "¡Te quedaste sin tiempo! (╯°□°）╯︵ ┻━┻";
         messageBox.appendChild(outOfTimeMessage);
+        messageBox.style.display = "block";
 
-        const restartButton = document.createElement("button");
-        restartButton.textContent = "Reiniciar Juego";
+        // Mostrar el contenedor del botón de reinicio
+        restartContainer.style.display = "flex";
 
+        // Reiniciar el juego al hacer clic en el botón
         restartButton.addEventListener("click", () => {
             location.reload();
         });
-
-        messageBox.appendChild(restartButton);
-        messageBox.style.display = "block";
     }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("modal");
+    const modalText = document.getElementById("modalText");
+    const closeModal = document.getElementById("closeModal");
+
+    const tutorialButton = document.getElementById("tutorialButton");
+    const creditsButton = document.getElementById("creditsButton");
+
+    // Mostrar el modal con información del tutorial
+    tutorialButton.addEventListener("click", () => {
+        modalText.innerHTML = `
+            <h2>Tutorial</h2>
+            <p>Bienvenido al Escape Room. Usa las teclas de flecha o WASD para moverte.</p>
+            <p>Interactúa con los objetos presionando la tecla "E".</p>
+            <p>¡Resuelve los acertijos y escapa antes de que se acabe el tiempo!</p>
+        `;
+        modal.style.display = "flex";
+    });
+
+    // Mostrar el modal con información de los créditos
+    creditsButton.addEventListener("click", () => {
+        modalText.innerHTML = `
+            <h2>Créditos</h2>
+            <p>Desarrollado por: Andrea Mouriño e Iván Gutiérrez</p>
+            <p>Imágenes: Andrea Mouriño </p>
+            <p> Personajes: Blackie como <b>Blackie</b></p>
+            <p>Gracias por jugar.</p>
+        `;
+        modal.style.display = "flex";
+    });
+
+    // Cerrar el modal
+    closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    // Cerrar el modal al hacer clic fuera del contenido
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
 });

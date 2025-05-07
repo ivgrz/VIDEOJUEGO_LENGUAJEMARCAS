@@ -19,24 +19,44 @@ body {
     width: 100%;
     height: 100vh;
     background-image: url('Imagenes/pantallainicial.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
+/* Contenedor de los botones */
+.buttonContainer {
+    display: flex;
+    flex-direction: column; /* Disposición vertical */
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el contenedor */
+}
 
+/* Estilo de los botones */
 .startbutton {
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 10px 20px;
     font-size: 50px;
-    color: white;
-    background-color: rgb(241, 158, 172);
-    border: solid 4px;
+    color: black;
+        background-color: rgb(241, 158, 172); /* Mantener el color original */
+    border: solid 4px black;
     border-radius: 15px;
     cursor: pointer;
+    margin: 10px 0; /* Espaciado vertical entre botones */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.startbutton:hover {
+    background-color: rgb(255, 200, 200); /* Cambia el fondo a un tono más claro al pasar el mouse */
 }
 
 .startbutton:active {
-    transform: scale(0.95); 
-    box-shadow: 0 0 10px rgb(255, 142, 185); 
-    background-color: rgb(220, 130, 150); 
+    transform: scale(0.95); /* Reduce ligeramente el tamaño al hacer clic */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce la sombra al hacer clic */
 }
 
 #gameScreen {
@@ -153,28 +173,28 @@ body {
 #messageBox  {
     position: absolute; 
     text-align: center;
-    top: 20px; 
+    bottom: 10px; 
     left: 50%;
     transform: translateX(-50%); 
-    background-image: url('Imagenes/mensaje.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
+    background-color: rgba(0, 0, 0, 0.7); 
     color: white; 
-    
-
+    padding: 10px; 
+    border-radius: 5px;
     display: none;
     z-index: 1000;
-    
-
 }
 
 #messageBox img {
-    max-width: 100px; 
-    max-height: 100px;
-    display: block;
-    margin: 10px auto; 
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Asegura que la imagen sea un bloque independiente */
+    margin: 10px auto; /* Centra la imagen horizontalmente y agrega espacio vertical */
+}
+
+#messageBox p {
+    margin: 10px 0; /* Espaciado entre el texto y otros elementos */
+    font-size: 16px; /* Tamaño de fuente para el texto */
+    line-height: 1.5; /* Espaciado entre líneas para mejorar la legibilidad */
 }
 
 #timer {
@@ -202,7 +222,83 @@ body {
 }
 
 #interactionImageContainer img {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 70%;
+    max-height: 70%;
     margin-bottom: 10px;
+}
+
+/* Estilo del modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón de cerrar */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+
+#restartContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2000; /* Asegura que esté por encima de otros elementos */
+    text-align: center;
+}
+
+.restartButton {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 15px 30px;
+    font-size: 24px;
+    color: white;
+    background-color: rgb(241, 158, 172);
+    border: solid 4px black;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.restartButton:hover {
+    background-color: rgb(255, 200, 200); /* Cambia el fondo a un tono más claro al pasar el mouse */
+}
+
+.restartButton:active {
+    transform: scale(0.95); /* Reduce ligeramente el tamaño al hacer clic */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce la sombra al hacer clic */
+}
+
+.fondo-transparent {
+    opacity: 0.5; /* Reduce la opacidad al 50% */
+    transition: opacity 0.3s ease; /* Transición suave para el cambio de opacidad */
 }

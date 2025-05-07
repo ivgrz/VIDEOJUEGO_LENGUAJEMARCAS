@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escape Room</title>
+    <title>Blackie Scape</title>
     <link rel="stylesheet" href="escaperoom.css">
 </head>
 <body>
-  <!--Pantalla inicial-->  
+  <!-- Pantalla inicial -->
   <div id="startScreen" class="startScreen">
-      <button id="startButton" class="startbutton">Comenzar Juego</button>
+      <div id="buttonContainer" class="buttonContainer">
+          <button id="startButton" class="startbutton">Comenzar</button>
+          <button id="tutorialButton" class="startbutton">Tutorial</button>
+          <button id="creditsButton" class="startbutton">Créditos</button>
+      </div>
   </div>
 
   <!-- Pantalla de juego -->
@@ -37,6 +41,20 @@
       <div id="interactionImageContainer"></div> <!-- Contenedor para las imágenes -->
   </div>
 
+  <!-- Contenedor para el botón de reinicio -->
+  <div id="restartContainer" style="display: none;">
+      <button id="restartButton" class="restartButton">Reiniciar Juego</button>
+  </div>
+
+  <!-- Contenedor modal -->
+  <div id="modal" class="modal" style="display: none;">
+      <div class="modal-content">
+          <span id="closeModal" class="close">&times;</span>
+          <div id="modalText"></div>
+      </div>
+  </div>
+
+  
   <script src="escaperoom.js"></script>
 </body>
 </html>
