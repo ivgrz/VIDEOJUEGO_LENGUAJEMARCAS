@@ -153,15 +153,20 @@ body {
 #messageBox  {
     position: absolute; 
     text-align: center;
-    bottom: 10px; 
+    top: 20px; 
     left: 50%;
     transform: translateX(-50%); 
-    background-color: rgba(0, 0, 0, 0.7); 
+    background-image: url('Imagenes/mensaje.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
     color: white; 
-    padding: 10px; 
-    border-radius: 5px;
+    
+
     display: none;
     z-index: 1000;
+    
 
 }
 
@@ -170,4 +175,34 @@ body {
     max-height: 100px;
     display: block;
     margin: 10px auto; 
+}
+
+#timer {
+    position: absolute;
+    top: 10px;
+    left: 90%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+#interactionImageContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1100; /* Asegura que esté por encima de otros elementos */
+    display: none; /* Oculto por defecto */
+    text-align: center;
+}
+
+#interactionImageContainer img {
+    max-width: 200px;
+    max-height: 200px;
+    margin-bottom: 10px;
 }

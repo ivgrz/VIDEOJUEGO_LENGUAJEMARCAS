@@ -4,22 +4,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let posX = 0;
     let posY = 0;
-    const step = 20; 
+    const step = 20;
     let currentCollision = null;
-    let isTimeCorrect = false; 
-    let hasKey = false; 
+    let isTimeCorrect = false;
+    let hasKey = false;
+    let timerInterval;
+    let timeRemaining = 300; // 5 minutos en segundos
 
-    // Objetos con los que puede colisionar
     const obstacles = Array.from(document.querySelectorAll(".obstacle"));
 
     document.getElementById("startButton").addEventListener("click", () => {
         document.getElementById("startScreen").style.display = "none";
         document.getElementById("gameScreen").style.display = "block";
 
-        // Posicionar el personaje en la parte baja derecha 
-        posX = fondo.offsetWidth - character.offsetWidth - 10; 
-        posY = fondo.offsetHeight - character.offsetHeight - 10; 
+        posX = fondo.offsetWidth - character.offsetWidth - 10;
+        posY = fondo.offsetHeight - character.offsetHeight - 10;
         updateCharacterPosition();
+
+        startTimer();
     });
 
     function updateCharacterPosition() {
@@ -36,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
         for (const obstacle of obstacles) {
             const obstacleRect = obstacle.getBoundingClientRect();
 
-            // Colisión
             if (
                 characterRect.left < obstacleRect.right &&
                 characterRect.right > obstacleRect.left &&
@@ -88,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     character.style.backgroundImage = "url('Imagenes/blackie_derecha_sinfondo.png')";
                 }
                 break;
-            case "e": 
+            case "e":
                 if (currentCollision) {
                     interactWithObject(currentCollision);
                 }
@@ -107,23 +108,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function interactWithObject(object) {
         const messageBox = document.getElementById("messageBox");
+        const interactionImageContainer = document.getElementById("interactionImageContainer");
 
-        // Limpia el contenido previo del mensaje
+        // Limpia el contenido previo del mensaje y la imagen
         messageBox.innerHTML = "";
+        interactionImageContainer.innerHTML = "";
+        interactionImageContainer.style.display = "none";
 
-        // Interaccion con cada objeto
         switch (object.id) {
             case "maceta":
                 const messageTextMaceta = document.createElement("p");
                 messageTextMaceta.textContent = "¡Encontré una llave! (っ◕‿◕)っ ♥";
                 messageBox.appendChild(messageTextMaceta);
 
+                // Crear y mostrar imagen de la llave
                 const keyImage = document.createElement("img");
                 keyImage.src = "Imagenes/llavebien.png";
                 keyImage.alt = "Llave";
-                messageBox.appendChild(keyImage);
+                interactionImageContainer.appendChild(keyImage);
+                interactionImageContainer.style.display = "block";
 
-                hasKey = true; // Marca que el jugador tiene la llave
+                hasKey = true;
                 messageBox.style.display = "block";
                 break;
 
@@ -138,15 +143,25 @@ document.addEventListener("DOMContentLoaded", () => {
                     messageTextEscritorio.textContent = "¡Logré abrir el cajón del escritorio y he encontrado una nota! (◑.◑)";
                     messageBox.appendChild(messageTextEscritorio);
 
+                    // Crear y mostrar imagen de la nota
                     const noteImage = document.createElement("img");
                     noteImage.src = "Imagenes/CODIGOH.png";
                     noteImage.alt = "Nota";
-                    noteImage.style.width = "100px";
-                    noteImage.style.height = "auto";
-                    noteImage.style.margin = "10px auto";
-                    messageBox.appendChild(noteImage);
+                    interactionImageContainer.appendChild(noteImage);
+                    interactionImageContainer.style.display = "block";
                 } else {
                     messageBox.textContent = "El cajón está cerrado. Necesito una llave";
+                }
+                messageBox.style.display = "block";
+                break;
+
+            case "reloj":
+                const userInput = prompt("¿Qué hora crees que es?");
+                if (userInput === "09:42") {
+                    isTimeCorrect = true;
+                    messageBox.textContent = "¡Correcto! La hora es 09:42. (⌐■_■)";
+                } else {
+                    messageBox.textContent = "Justo esa no es ( ˘︹˘ )";
                 }
                 messageBox.style.display = "block";
                 break;
@@ -155,33 +170,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (isTimeCorrect) {
                     messageBox.textContent = "¡La puerta está abierta! ¡Lo he logrado!";
 
-                    // Crear botón de reinicio
                     const restartButton = document.createElement("button");
                     restartButton.textContent = "Reiniciar Juego";
                     restartButton.style.marginTop = "10px";
                     restartButton.style.padding = "10px 20px";
                     restartButton.style.cursor = "pointer";
 
-                    // Recargar la página
                     restartButton.addEventListener("click", () => {
                         location.reload();
                     });
 
-                    // Agregar el botón al mensaje
                     messageBox.appendChild(restartButton);
                 } else {
                     messageBox.textContent = "La puerta está cerrada. Tengo que buscar la forma de abrirla (ㆆ_ㆆ)";
-                }
-                messageBox.style.display = "block";
-                break;
-
-            case "reloj":
-                const userInput = prompt("¿Qué hora crees que es?");
-                if (userInput === "09:42") {
-                    isTimeCorrect = true; // Marca la hora como correcta
-                    messageBox.textContent = "¿Qué temprano, no?";
-                } else {
-                    messageBox.textContent = "Justo esa no es ( ˘︹˘ )";
                 }
                 messageBox.style.display = "block";
                 break;
@@ -191,9 +192,50 @@ document.addEventListener("DOMContentLoaded", () => {
                 messageBox.style.display = "block";
         }
 
-        // Duracion del mensaje
+        // Ocultar la imagen y el mensaje después de 5 segundos
         setTimeout(() => {
+            interactionImageContainer.style.display = "none";
             messageBox.style.display = "none";
         }, 5000);
+    }
+
+    function startTimer() {
+        const timerElement = document.getElementById("timer");
+        timerInterval = setInterval(() => {
+            if (timeRemaining > 0) {
+                timeRemaining--;
+                const minutes = Math.floor(timeRemaining / 60).toString().padStart(2, "0");
+                const seconds = (timeRemaining % 60).toString().padStart(2, "0");
+                timerElement.textContent = `${minutes}:${seconds}`;
+            } else {
+                clearInterval(timerInterval);
+                showOutOfTimeMessage();
+            }
+        }, 1000);
+    }
+
+    function stopTimer() {
+        clearInterval(timerInterval);
+    }
+
+    function showOutOfTimeMessage() {
+        const messageBox = document.getElementById("messageBox");
+
+        messageBox.innerHTML = "";
+        messageBox.classList.add("out-of-time");
+
+        const outOfTimeMessage = document.createElement("p");
+        outOfTimeMessage.textContent = "¡Te quedaste sin tiempo! (╯°□°）╯︵ ┻━┻";
+        messageBox.appendChild(outOfTimeMessage);
+
+        const restartButton = document.createElement("button");
+        restartButton.textContent = "Reiniciar Juego";
+
+        restartButton.addEventListener("click", () => {
+            location.reload();
+        });
+
+        messageBox.appendChild(restartButton);
+        messageBox.style.display = "block";
     }
 });
